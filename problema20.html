@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Aplicații </h1>
+
+<br>
+<br>
+
+		<h2><u>Problema 18:</u> <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Din fișierul <i>“vector.in”</i> se citesc un  număr întreg <i>n < 30</i> și apoi n numere reprezentând elementele unui vector. Să se construiască o matrice cu 3 coloane ale cărei linii vor conține toate tripletele de elemente din vector care au proprietatea că pot reprezenta laturile unui triunghi. Matricea va fi afișată în fișierul <i>“matrice.out”</i> după modelul din exemplu.   <br>
+<br>
+		Exemplu:</h2><br>
+
+			<h6><i><font color="#781e4e"> vector.in:</font> </i><br>7<br>12 45 10 5 90 4 51 <br> 
+				<i><font color="#781e4e"> vector.out:</font></i><br>12 45 51<br>12 10 5<br>12 10 4<br>45 10 51<br>45 90 51 </h6>
+<br>
+<br>
+        <h2> Rezolvare: </h2><br>
+<br>
+        <h6>#include < bits/stdc++.h ><br>
+<br>
+        using namespace std;<br>
+        ifstream fin ("linie.in");<br>
+        ofstream fout ("linie.out");<br>
+<br>
+        int v[31],n,i,j,k;<br>
+        int main()<br>
+        {</h6>
+<br>
+    <h3>cin >> n;<br>
+<br>
+    for(i=1; i<= n; i++)</h3> 
+        <h4>cin>>v[i];</h4>
+<br>
+    <h3>for(i=1; i<= n; i++)</h3>
+        <h4>for(j=i+1; j<=n; j++)</h4>
+            <h5>for(k=j+1; k<=n; k++)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(v[i]+v[j]>v[k] && v[i]+v[k]>v[j] && v[k]+v[j]>v[i] && v[k]!=0 && v[i]!=0 && v[j]!=0)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << v[i] << ' ' << v[j] << ' ' << v[k] << '\n';</h5>
+<br>
+    <h3>return 0;</h3>
+<h6>}</h6>
+    </body>
+</html>
+

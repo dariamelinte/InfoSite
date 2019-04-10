@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Aplicații </h1>
+
+<br>
+<br>
+
+		<h2><u>Problema 13:</u> <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Din fişierul text <i>tablou.in</i> se citesc: un număr natural <b>n</b> reprezentând numărul de componente ale unui vector cu numere naturale nenule cu cel mult 9 cifre fiecare şi cele <b>n</b> componente ale vectorului <b>(n≤100)</b>.<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Afişaţi elementele vectorului pe primul rând al fişierului text <i>tablou.out</i>, ordonate crescător.<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Determinați cel mai mare și cel mai mic element din cele n citite care au ultima cifră pară. Acestea se vor afișa, separate printr-un spațiu, pe a doua linie a fișierului <i>tablou.out</i>. Dacă nu există niciun element care să aibă ultima cifră pară, se va afișa în fișier mesajul <i>Nu există!</i>.  <br>
+<br>
+		Exemplu:</h2><br>
+
+			<h6><i><font color="#781e4e"> tablou.in:</font> </i><br>6<br>1431 142 1422 9009 32 72<br> 
+				<i> <font color="#781e4e"> tablou.out:</font></i><br>32 72 142 1422 1431 9009 <br>1422 32 </h6>
+<br>
+<br>
+		<h2>Rezolvare:<br></h2>
+<br>
+		<h6>#include < bits/stdc++.h ><br>
+<br>
+		using namespace std;<br>
+		ifstream fin ("tablou.in");<br>
+		ofstream fout ("tablou.out");<br>
+<br>
+		int n,i,v[101],ok,j;<br>
+		int main()<br>
+		{</h6>
+    		<h3>fin>>n;<br>
+    		for(i=1; i<=n; i++)</h3>
+        		<h4>fin>>v[i];</h4>
+<br>
+    		<h3>for(i=1; i < n; i++)</h3>
+        		<h4>for(j=i+1; j<=n; j++)</h4>
+            		<h5>if(v[i]>v[j])<br>
+                		&nbsp;&nbsp;swap(v[i], v[j]);</h5>
+    		<h3>for(i=1; i<=n; i++)</h3>
+        		<h4>fout << v[i] <<' ';</h4>
+    		<h3>fout << endl;<br>
+<br>
+    		for(i=n; i>=1; i--)</h3>
+        		<h4>if(v[i]%2==0)<br>
+        		{</h4>
+            		<h5>fout << v[i] <<' ';<br>
+            		ok=1;<br>
+            		break;</h5>
+        		<h4>}</h4>
+<br>
+    		<h3>for(i=1; i<=n; i++)</h3>
+        		<h4>if(v[i]%2==0)<br>
+        		{</h4>
+            		<h5>fout << v[i] <<' ';<br>
+            		ok=1;<br>
+            		break;</h5>
+        		<h4>}</h4>
+<br>
+   			<h3>if(ok!=1)</h3>
+        		<h4>fout<<"Nu există!";</h4>
+<br>
+    		<h3>return 0;</h3>
+		<h6>}</h6>
+	</body>
+
+</html>

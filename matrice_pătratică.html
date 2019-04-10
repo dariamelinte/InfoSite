@@ -1,0 +1,96 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Matricea pătratică</h1>
+<br>
+	<h2>Caracteristica principală a unei matrice pătratică este faptul că are  numărul de linii egal cu numărul de coloane. </h2>
+<br>
+<br>		
+	<h6><font size=4>
+		<font color=blue>a<sub>11</sub></font>&nbsp;&nbsp;&nbsp;
+		a<sub>12</sub>&nbsp;&nbsp;&nbsp;
+		<font color=red>a<sub>13</sub></font><br>  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <font color=blue>&#8594; Diagonala principală </font>  
+		<br>
+		a<sub>21</sub>&nbsp;&nbsp;&nbsp;
+		<font color=purple>a<sub>22</sub></font>&nbsp;&nbsp;&nbsp;
+		a<sub>23</sub><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <font color=red>&#8594; Diagonala secundară </font>  
+
+		<br>
+		<font color=red>a<sub>31</sub></font>&nbsp;&nbsp;&nbsp;
+		a<sub>32</sub>&nbsp;&nbsp;&nbsp;
+		<font color=blue>a<sub>33</sub></font><br></font></h6>
+<br>
+<br>
+		<h2>Afișați elementele de pe diagonala principală</h2>
+	<br>
+		<h6>I.  for(i=1; i<=n; i++)</h6>
+			<h3>&nbsp;for(j=1; j<=n; j++)</h3>
+				<h4>if(i==j)</h4>
+					<h5>cout << a[i][j] <<' ';</h5>
+	<br>
+		<h6>II.  for(i=1; i<=n; i++)</h6>
+			<h3>&nbsp;&nbsp;&nbsp;cout << a[i][i] <<' ';</h3>
+	<br>
+
+	<h2> Indicii elementelor de pe diagonala principală respectă relația <font color=red>i=j</font>, iar cele de pe diagonala secundară respectă relația <font color=red>i+j=n+1</font>. <br>
+<br>
+<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=red>i+j=n+1 &#8594; j=n+1-i</font><br>
+<br>
+	Afișați diagonala secundară</h2>
+	<br>
+		<h6>for(i=1; i<=n; i++)</h6>
+			<h3>cout << a[i][<font color=red>n+1-j</font>];</h3> 
+<br>
+<br>
+	<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Să se calculeze câte numere prime sunt în zona de vest a unei matrici.<br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+	 <h6>#include < bits/stdc++.h ><br>
+<br>
+        using namespace std;<br>
+        ifstream fin ("date.in");<br>
+        ofstream fout ("date.out");<br>
+<br>
+        int a[101][101],n,i,jș<br>
+        int main()<br>
+        {</h6>
+        	<h3>fin>>n>>m;<br>
+        	for(i=1; i<=n; i++)</h3>
+        		<h4>for(j=1; j<=m; j++)</h4>
+        			<h5>fin>>a[i][j];</h5>
+        	<h3>for(i=1; i<=n; i++)</h3>
+        		<h4>for(j=1; j<=m; j++)</h4>	
+        			<h5>if(i > j && i+j < n+1)<br>
+        			{<br>
+        				&nbsp;&nbsp;&nbsp;for(d=2; d*d<=a[i][j]; d++)<br>
+        				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(a[i][j]%d==0)<br>
+        				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ok=1; break;}<br>
+        				&nbsp;&nbsp;&nbsp;if(ok==0)   k++;<br>
+        			}</h5>
+        	<h3>fout << k;<br>
+        	return 0;</h3>
+        <h6>}</h6>
+</body>
+</html>
+
+
+
+
+
+
+
+

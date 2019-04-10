@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Aplicații </h1>
+
+<br>
+<br>
+
+		<h2><u>Problema 5:</u> <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Două numere naturale cu proprietatea că suma divizorilor fiecărui număr (neconsiderând în acest caz numărul însuşi ca divizor) este egală cu celălalt număr plus 1, se numesc numere quasi-amiabile sau numere logodite.<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pe fiecare linie a fişierului text <i>numere.txt</i> se găsesc câte 2 numere naturale. Știind că 2 numere situate pe o linie a fișierului formează o pereche, să se afișeze la ecran toate perechile de numere quasi-amiabile din fișier. <br>
+<br>
+		Exemplu:</h2><br>
+
+			<h6><i><font color="#781e4e"> numere.txt:</font> </i><br>25 18<br>48 75<br>195 140<br>260 310<br> 
+				<i> <font color="#781e4e">se afișează:</font></i><br>48 75<br>195 140</h6>
+<br>
+<br>
+		<h2>Rezolvare:<br></h2>
+<br>
+		<h6>#include < bits/stdc++.h ><br>
+<br>
+		using namespace std;<br>
+		ifstream fin ("numere.txt");<br>
+	<br>
+		int x1,x2,i,j,s1,s2;<br>
+		int main()<br>
+		{</h6>
+    		<h3>while(fin>>x1>>x2)<br>
+    		{</h3>
+        		<h4>for( i = 1; i < x1; i++ )</h4>
+            		<h5>if(x1%i==0)<br>
+                		&nbsp;&nbsp;s1=s1+i;</h5>
+<br>
+    		    <h4>for( j = 1; j < x2; j++ )</h4>
+                		<h5>if(x2%j==0)<br>
+                    		&nbsp;&nbsp;s2=s2+j;</h5>
+<br>
+        		<h4>if(s1==x2+1 && s2==x1+1)</h4>
+            		<h5>cout << x1 << ' ' << x2 << endl;</h5>
+        	<h4>s1=0;s2=0;</h4>
+<br>
+    		<h3>}<br>
+    		return 0;</h3>
+		<h6>}</h6>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</body>
+
+</html>

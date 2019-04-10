@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Vectorul de frecvență</h1>
+<br>
+	<h2> Valorile din vectorul de frecvență sunt frecvențele pentru numărul de pe poziții.</h2>
+<br>
+<br>
+		
+		<h6>while(fin>>x)</h6>
+			<h3>fr[x]++;</h3>
+
+<br>
+<br>
+		
+		<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se dau n numere naturale. Determinaţi cele mai mari două numere cu trei cifre care nu apar printre numerele date.   <br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+
+		<h6>#include < bits/stdc++.h ><br>
+<br>
+		using namespace std;<br>
+		ifstream fin ("ciffrecv.in");<br>
+		ofstream fout ("ciffrecv.out");<br>
+<br>
+		int fr[1000],n,i,a,b;<br>
+		int main()<br>
+		{</h6>
+
+		    <h3>cin>>n;<br>
+    		for(i=1; i<=n; i++)<br>
+    		{</h3>
+
+        		<h4>cin>>b;<br>
+        		if(b<=999)</h4>
+            		<h5>fr[b]++;</h5>
+    		<h3>}<br>
+    		b=999;<br>
+    		while(b>99 && fr[b]!=0)</h3>
+        		<h4>b--;</h4>
+    		<h3>a=b-1;<br>
+    		while(a>99 && fr[a]!=0)</h3>
+        		<h4>a--;</h4>
+    		<h3>if(a>99)</h3>
+        		<h4>cout << a << ' ' << b;</h4>
+    		<h3>else</h3>
+        		<h4>cout<<"NU EXISTA";</h4>
+    		<h3>return 0;</h3>
+		<h6>}</h6>
+
+	</body>
+</html>

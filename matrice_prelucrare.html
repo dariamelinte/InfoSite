@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Prelucrarea elementelor pe linii și coloane </h1>
+<br>
+	<h2><u> I. Pe linii</u><br>
+<br>	
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Când se prelucrează elementele pentru fiecare linie în parte, se începe cu un for pentru linii, se pune acoladă, iar în interiorul acoladelor se restează ceea ce se calculează pentru fiecare linie și se parcurge linia prin forul de coloane.  
+<br>
+<br>
+		Exemplu: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Afișați suma și maximul de pe fiecare linie. <br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+		
+		<h6>cin>>n>>m;<br>
+		for(i=1; i<=n; i++)</h6>
+			<h3>for(j=1; j<=m; j++)</h3>
+				<h4>cin>>a[i][j];</h4>
+<br>
+		<h6>for(i=1; i<=n; i++)<br>
+		{</h6>
+			<h3>s=0; maxi=-999999;<br>
+			for(j=1; j<=m; j++)<br>
+			{</h3>
+				<h4>s=s+a[i][j];<br>
+				if(a[i][j]>maxi)</h4>
+					<h5>maxi=a[i][j];</h5>
+			<h3>}<br>
+			cout << s << ' ' << maxi << '\n';</h3>
+		<h6>}</h6>
+<br>
+<br>
+	<h2><u> II. Pe coloane </u><br>
+<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Când se prelucrează elementele pentru fiecare linie în parte, se începe cu un for pentru coloane, se pune acolada, iar în interiorul acoladelor se reseteaza ceea ce se calculează pentru fiecare coloană și se parcurge coloana cu forul de linii.<br>
+<br>
+<br>
+		Exemplu: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Să se afișeze numărul de coloane care au toate elementele egale.<br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+		<h6>cin>>n>>m;<br>
+		for(i=1; i<=n; i++)</h6>
+			<h3>for(j=1; j<=m; j++)</h3>
+				<h4>cin>>a[i][j];</h4>
+<br>
+		<h6>for(j=1; j<=m; j++)<br>
+		{</h6>
+			<h3>k=1;<br>
+			for(i=1; i<=n; i++)</h3>
+				<h4>if(a[1][j]!=a[i][j])<br>
+				{</h4>
+					<h5>k=0;<br>
+					break;</h5>
+				<h4>}</h4>
+			<h3>if(k==1)</h3>
+				<h4>nr++;</h4>
+		<h6>}<br>
+<br>
+		cout << nr;</h6>
+
+	</body>
+</html>

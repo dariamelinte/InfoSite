@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Aplicații </h1>
+
+<br>
+<br>
+
+		<h2><u>Problema 4:</u> <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Din fișierul text <i>atestat.in</i>, se citesc trei numere naturale <b>x, y, k;</b> (1 < x < y < 2000000, k < 1000).<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Afișați <b>k</b> numere prime din intervalul <b>[x,y]</b>, pe primul rând al fișierului text <i>atestat.out</i> se va afișa mesajul <i>"s-au găsit mai puține numere prime: "</i> urmat de numărul acestora.<br>
+<br>
+		Exemplu:</h2><br>
+
+			<h6><i><font color="#781e4e"> atestat.in:</font> </i><br>3 12 5 <br>
+				<i><font color="#781e4e"> atestat.out:</font></i><br>3 5 7 11<br> s-au găsit mai puține numere prime: 4</h6>
+<br>
+<br>
+		<h2>Rezolvare:<br></h2>
+<br>
+		<h6>#include < bits/stdc++.h ><br>
+<br>
+		using namespace std;<br>
+		ifstream fin ("atestat.in");<br>
+		ofstream fout ("atestat.out");<br>
+<br>
+		int x,y,nr,k,i,d,ok;<br>
+		int main()<br>
+		{</h6>
+		    <h3>fin>>x>>y>>k;<br>
+    		for(i=x; i<=y; i++)<br>
+    		{</h3>
+        		<h4>ok=0;<br>
+        		for(d=2; d*d<=i; d++)</h4>
+            		<h5>if(i%d==0)<br>
+            		{<br>
+                		&nbsp;&nbsp;ok=1;<br>
+                		&nbsp;&nbsp;break;<br>
+            		}</h5>
+<br>
+        		<h4>if(ok==0)<br>
+        		{</h4>
+            		<h5>nr++;<br>
+            		fout << i << ' ';</h5>
+        		<h4>}</h4>
+    		<h3>}<br>
+<br>
+    		if(nr!=k)<br>
+    		{</h3>
+    		    <h4>fout << endl;<br>
+        		fout << "s-au gasit mai putine numere prime: " << nr;</h4>
+    		<h3>}<br>
+    		return 0;</h3>
+		<h6>}</h6>
+
+
+
+
+	</body>
+
+</html>

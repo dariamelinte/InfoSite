@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Parcurgerea în spirală a unei matrici </h1>
+<br>
+	<h2 style="text-align: center;">    Avem n/2 pătrate concentrice de elemente<br> + <br> elementul a[n/2+1][n/2+1] dacă este impar. <br><br><br>
+			Pătratul 1 începe de la a[1][1]. <br>
+			Pătratul 2 de la a[2][2].<br>
+			Pătratul k de la a[k][k].</h2>
+<br>
+<br>
+		
+		<h6>for(k=1; k<=n/2; k++)<br>
+		{</h6>
+			<h3>for(j=k; j<=n+1-k; j++)</h3>
+				<h4>cout << a[k][j];</h4>
+			<h3>for(i=k+1; i<=n+1-k; i++)</h3>
+				<h4>cout << a[i][n+1-k];</h4>
+			<h3>for(j=n+1-k-1; j>=k; j--)</h3>
+				<h4>cout << a[n+1-k][j];</h4>
+			<h3>for(i=n-k; i>=k+1; i--)</h3>
+				<h4>cout << a[i][k];</h4>
+		<h6>}
+<br>
+		<h6>if ( n % 2 == 1 )</h6>
+			<h3>cout << a[n/2+1][n/2+1];</h3>
+<br><br>
+<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se dă un număr "nr". Să se construiască o matrice pătratică care conține pe prima linie cifra unităților, pe a doua cifra zecilor etc.<br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+		
+	<h6>
+			#include < bits/stdc++.h ><br>
+<br>
+			using namespace std;<br>
+			ifstream fin ("date.in");<br>
+			ofstream fout ("date.out");<br>
+<br>
+			int unr,nr,n,i,j,x,a[101][101];<br>
+			int main()<br>
+			{</h6>
+				<h3>unr=nr;<br>
+				while(unr!=0)<br>
+				{</h3>
+					<h4>unr=unr/10;<br>
+					n++;</h4>
+				<h3>}<br>
+<br>
+				for(i=1; i<=n; i++)<br>
+				{</h3>
+					<h4>x=nr%10;<br>
+					nr=nr/10;<br>
+					for(j=1; j<=n; j++)</h4>
+						<h5>a[i][j]=x;</h5>
+				<h3>}<br>
+				return 0;</h3>
+			<h6>}</h6>
+	</body>
+</html>

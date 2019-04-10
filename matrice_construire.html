@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Construirea unei matrici </h1>
+<br>
+	<h2><u> I. Pe baza unei formule </u><br>
+	<br>
+			Exemplu: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a) Fiecare element este egal cu suma dintre i și j<br>
+<br>
+		Rezolvare:<br></h2>
+<br>	
+		<h6>cin>>n>>m;<br>
+		for(i=1; i<=n; i++)</h6>
+			<h3>for(j=1; j<=m; j++)</h3>
+				<h4>cin>>a[i][j];</h4>
+<br>
+		<h6>for(i=1; i<=n; i++)<br>
+		{</h6>
+			<h3>for(j=1; j<=m; j++)</h3>
+				<h4>cout << a[i][j] << ' ';<br>
+				cout << endl;</h4>
+		<h6>}</h6>
+<br>
+		<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b) Diagonalele principale și cea secundare sunt 0. Restul elementelor sunt egale cu cel mai mare indice dintre linie și coloană<br>
+<br>
+		Rezolvare:</h2>
+<br>
+		<h6>for(i=1; i<=n; i++)</h6>
+			<h3>for(j=1; j<=m; j++)<br>
+			{</h3>
+				<h4>if( i > j )</h4> 
+					<h5>a[i][j]=1;</h5>
+				<h4>else  if( i < j )</h4>
+					<h5>a[i][j]=0;</h5> 
+				<h4>else  a[i][j]=0;<br>
+<br>
+				if(i+j=n+1)</h4>
+					<h5>a[i][j]=0;</h5> 
+			<h3>}</h3>
+<br>
+		<h2><u> II. Când valoarea din matrice nu are legătură cu linia sau coloana. </u></h2>
+<br>
+		
+	  <h2>Exemplu : </h2> <br>
+<br>
+	
+				<h6>nr=1;<br>
+				for(i=1; i<=n; i++)</h6>
+					<h3>for(j=1; j<=m; j++)<br>
+					{</h3>
+						<h4>a[i][j]=nr;<br>
+						nr++;</h4>
+					<h3>}</h3>
+		
+<br>
+<h6><font color="#781e4e">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3<br><br>
+				4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6<br><br>
+				7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9<br></font>
+		
+	</body>
+</html>

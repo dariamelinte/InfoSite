@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Inversarea a două elemente într-un vector </h1>
+<br>
+<br>
+		<h2>Pentru a inversa două elemente dintr-un vector se folosește metoda variabilei auxiliare sau se folosește o funcție <font color="green">swap</font>.</h2> <br>
+<br>
+
+	<h6>for(i=1; i<=n-1; i++)</h6>
+		<h3>for(j=i+1; j<=n; j++)</h3>
+			<h4>swap(v[i],v[j]);</h4>
+<br>
+<br>
+		
+		<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Să se ordoneze liniile unei matrici în funcție de suma elementelor pe linii. <br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+			<h6>
+			#include < bits/stdc++.h ><br>
+<br>
+using namespace std;<br>
+ifstream fin ("date.in");<br>
+ofstream fout ("date.out");<br>
+<br>
+int v[500],d,i,k,n;<br>
+int main()<br>
+{</h6>
+<br>
+    <h3>fin>>n;<br>
+    for(i=1; i<=n; i++)</h3>
+        <h4>fin>>v[i];</h4>
+    <h3>k=1;<br>
+    for(i=1; i<=n; i++)</h3>
+    <br>
+        <h4>if(v[i]!=v[1])</h4>
+            <h5>k=0;</h5>
+<br>
+    <h3>if(k==1)</h3>
+        <h4>cout<<"DA";</h4>
+    <h3>else</h3>
+        <h4>cout<<"NU";</h4>
+    <h3>return 0;</h3>
+<h6>}</h6>
+

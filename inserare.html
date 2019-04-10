@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Inserarea unui element într-un vector </h1>
+<br>
+		<h6>for ( i = 1; i <= n; i++ ) </h6>
+       		<h3>cin >> v [ i ];</h3>      
+<br>
+		<h6>int pozitie , valoare;</h6>
+			<h3>cin >> valoare >> pozitie;</h3>        
+<br>
+		<h6>for ( i = n; i >= pozitie; i-- )</h6>
+        	<h3>v [ i + 1 ] = v [ i ]; </h3>
+<br>		
+		<h6>n = n + 1;<br>
+<br>		
+		v[ pozitie ] = valoare;</h6>
+
+<br>
+<br>
+
+		<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Să se insereze într-un șir după fiecare element par dublul său.<br>
+<br>
+		Rezolvare:<br></h2>
+<br>	
+		<h6>	
+		#include < bits/stdc++.h ><br>
+<br>
+		using namespace std;<br>
+		ifstream fin ("date.in");<br>
+		ofstream fout ("date.out");<br>
+<br>
+		int n , i , v [ 101 ] , j;<br>
+		int main()<br>
+		{</h6>
+<br>
+			<h3>
+		    fin >> n;<br>
+		    for ( i = 1; i <= n; i++)</h3>
+<br>
+    		    <h4>fin >> v [ i ];</h4>
+<br>
+    		<h3>    
+    		for ( i = 1; i <= n; i++)</h3>
+<br>
+    			<h4>
+    		    if ( v [ i ] % 2 == 0)<br>
+    		    {</h4>
+
+    		    	<h5>
+            		n++;<br>
+        		    for ( j = n; i > i; j--)<br>
+                		&nbsp;&nbsp;v [ j ] = v [ j - 1 ];<br>
+            		v [ i + 1 ] = v [ i ] * 2;</h5>
+        		<h4>}</h4>
+
+    		<h3>for ( i = 1; i <= n; i++)</h3>
+        		<h4>fout << v [ i ] << " ";</h4>
+    		<h3>return 0;</h3>
+		<h6>}</h6>
+
+	</body>
+</html>

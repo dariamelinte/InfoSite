@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Aplicații </h1>
+
+<br>
+<br>
+
+		<h2><u>Problema 22:</u> <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Din fişierul text <i>matrice.in</i>  se citesc: un număr natural n reprezentând numărul de linii, respectiv coloane ale unei matrici pătratice cu numere întregi şi cele <b>n x n</b> componente ale matricei <b>(n < 100)</b>.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Afişaţi elementele matricei sub formă tabelară în fișierul <i>matrice.out</i>.<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Să se verifice dacă matricea este simetrică față de diagonala secundară. În fișierul <i>matrice.out</i>, la linie nouă se va afișa mesajul <i>DA</i> în situația în care matricea este simetrică, respectiv <i>NU</i> în caz contrar. <br>
+<br>
+		Exemplu:</h2><br>
+
+			<h6><i><font color="#781e4e"> matrice.in:</font> </i><br>4<br>1 2 3 4 5 6 7 3 8 9 6 2 0 8 5 1<br> 
+				<i> <font color="#781e4e"> matrice.out:</font></i><br>1 2 3 4<br>5 6 7 3<br>8 9 6 2<br>0 8 5 1<br>DA</h6>
+<br>
+<br>
+        <h2> Reozolvare: </h2><br>
+<br>
+        <h6>#include < bits/stdc++.h ><br>
+<br>
+        using namespace std;<br>
+        ifstream fin ("matrice.in");<br>
+        ofstream fout ("matrice.out");<br>
+<br>
+        int a[101][101],n,i,j,simetric;<br>
+        int main()<br>
+        {</h6>
+            <h3>fin>>n;<br>
+            for(i=1; i<=n; i++)</h3>
+                <h4>for(j=1; j<=n; j++)</h4>
+                    <h5>fin>>a[i][j];</h5>
+<br>
+<h3>for(i=1; i<=n; i++)<br>
+    {</h3>
+        <h4>for(j=1; j<=n; j++)</h4>
+            <h5>fout << a[i][j] << ' ';</h5>
+        <h4>fout<<'\n';</h4>
+    <h3>}<br>
+<br>
+    for(i=1; i<=n; i++)</h3>
+        <h4>for(j=1; j<=n; j++)<br>
+        {</h4>
+            <h5>if(i+j==n+1)<br>
+                &nbsp;&nbsp;&nbsp;simetric=simetric+0;<br>
+            else<br>
+            if(a[i][j]==a[n-j+1][n-i+1])<br>
+                &nbsp;&nbsp;&nbsp;simetric++;</h5>
+        <h4>}</h4>
+<br>
+    <h3>if(simetric==n*(n-1))</h3>
+        <h4>fout<<"DA";</h4>
+    <h3>else</h3>
+        <h4>fout<<"NU";</h4>
+<br>
+    <h3>return 0;</h3>
+<h6>}</h6>
+		
+	</body>
+
+</html>

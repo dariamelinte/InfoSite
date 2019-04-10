@@ -1,0 +1,64 @@
+			body 
+			{	background-image: url("4.jpg");
+				background-repeat: no-repeat;
+				background-size: cover;
+				margin-right: 50px;
+				margin-left: 50px;
+				margin-top: 50px;
+				margin-bottom: 50px;}
+
+			h1
+			{	color: #7a1f5c;
+				text-align: center;
+				font-family: Tahoma;
+				margin-top: 50px;
+				font-size: 40px;}
+
+			h2
+			{
+				color: #781e4e;
+				font-family: Tahoma;
+				font-size: 16px;
+				margin-top: 0em;
+   				margin-bottom: 0em;
+			}
+
+			h3
+			{
+				font-family: "Courier New";
+				color: black;
+				margin-left: 90px;
+				font-size: 16px;
+				margin-top: 0em;
+   				margin-bottom: 0em;
+			}
+
+			h4
+			{
+				font-family: "Courier New";
+				color: black;
+				margin-left: 120px;
+				font-size: 16px;
+				margin-top: 0em;
+   				margin-bottom: 0em;
+			}
+
+			h5
+			{
+				font-family: "Courier New";
+				color: black;
+				margin-left: 150px;
+				font-size: 16px;
+				margin-top: 0em;
+   				margin-bottom: 0em;
+			}
+
+			h6
+			{
+				font-family: "Courier New";
+				color: black;
+				margin-left: 60px;
+				font-size: 16px;
+				margin-top: 0em;
+   				margin-bottom: 0em;
+			}

@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Ștergerea unui element dintr-un vector </h1>
+<br>
+			<h6>for( i = 0; i < n; i++ )</h6>
+				<h3>cin >> v[ i ];</h3>
+<br>
+			<h6>int pozitie;<br>
+<br>
+			for( i = pozitie; i < n; i++ )</h6>
+				<h3>v[ i ] = v[ i + 1 ];</h3>
+<br>
+			<h6>n = n - 1;</h6>
+<br>
+<br>
+
+		<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se dă un vector cu  n elemente numere naturale. Să se șteargă din vector elementele care sunt pare.    <br>
+<br>
+		Rezolvare:<br></h2>
+<br>		
+		<h6>
+		#include < bits/stdc++.h ><br>
+<br>
+		using namespace std;<br>
+		ifstream fin ("date.in");<br>
+		ofstream fout ("date.out");<br>
+<br>
+		int n , i , v[ 101 ] , j;<br>
+		int main()<br>
+		{</h6>
+<br>
+			<h3>
+    		fin >> n;<br>
+<br>
+    		for( i = 1; i <= n; i++)</h3>
+<br>
+        		<h4>fin >> v [ i ];</h4>
+<br>
+        	<h3>
+    		for( i = 1; i <= n; i++)<br>
+    		{</h3>
+
+    			<h4>
+        		if( v [ i ] % 2 == 0)<br>
+        		{</h4>
+
+        			<h5>
+            		for( j = i; j <= n; j++)<br>
+            		{<br>
+
+                	&nbsp;&nbsp;&nbsp;v [ j ] = v [ j + 1 ];<br>
+
+            		}<br>
+            		n--;</h5>
+        		<h4>}</h4>
+    		<h3>}<br>
+<br>
+		    for( i = 1; i <= n; i++)</h3>
+<br>
+		        <h4>fout << v [ i ] << ' ';</h4>
+<br>
+    		<h3>return 0;</h3>
+		<h6>}</h6>
+
+
+
+	</body>
+</html>

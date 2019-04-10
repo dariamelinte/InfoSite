@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Aplicații </h1>
+
+<br>
+<br>
+
+		<h2><u>Problema 12:</u> <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Din fişierul text <i>tablou.in</i>  se citesc: un număr natural n reprezentând numărul de componente ale unui vector cu numere naturale nenule şi cele n componente ale vectorului (n≤100).<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Afişaţi elementele vectorului pe primul rând al fişierului text <i>tablou.out</i>, separate prin câte un spaţiu, în ordinea inversă citirii lor.<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pe al doilea rând al fișierului text <i>tablou.out</i> afișați media aritmetică a celor n elemente citite la punctul anterior, care îndeplinesc condiția că au prima cifră egală cu ultima.  <br>
+<br>
+		Exemplu:</h2><br>
+
+			<h6><i><font color="#781e4e"> tablou.in:</font> </i><br>6<br>1422 131 1445 9009 171<br> 
+				<i> <font color="#781e4e"> tablou.out:</font></i><br>171 9009 1445 131 1422<br>3103.67</h6>
+<br>
+<br>
+		<h2>Rezolvare:<br></h2>
+<br>
+		<h6>#include < bits/stdc++.h ><br>
+<br>
+			using namespace std;<br>
+			ifstream fin ("tablou.in");<br>
+			ofstream fout ("tablou.out");<br>
+<br>
+			int n,i,v[101],c1,c2;<br>
+			float s,k;<br>
+			int main()<br>
+			{</h6>
+    			<h3>fin>>n;<br>
+    			for(i=1; i<=n; i++)</h3>
+        			<h4>fin>>v[i];</h4>
+<b4>
+    			<h3>for(i=n; i>=1; i--)</h3>
+        			<h4>fout << v[i] << ' ';</h4>
+        		<h3>fout << endl;<br>
+<br>
+    			for(i=1; i<=n; i++)<br>
+    			{</h3>
+        			<h4>c1=v[i]%10;<br>
+        			c2=v[i];<br>
+        			while(c2>9)</h4>
+            			<h5>c2=c2/10;</h5>
+<b5>
+        			<h4>if(c1==c2)<br>
+        			{</h4>
+            			<h5>s=s+v[i];<br>
+            			k++;</h5>
+        			<h4>}</h4>
+    			<h3>}<br>
+    			fout << s / k;<br>
+    			return 0;</h3>
+			<h6>}</h6>
+	</body>
+
+</html>

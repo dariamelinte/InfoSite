@@ -1,0 +1,166 @@
+<html>
+	<head>
+	<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+		<h1>Prelucrarea cifrelor unui număr</h1>
+<br>
+		
+		<h2>Atunci când nu cunoaștem ordinul unui număr,apelăm la un algoritm elementar ce prelucrează toate cifrele unui număr și suntem atenți dacă avem un caz special pentru numărul <font color="red">0</font>.</h2>
+<br>
+<br>
+		<h6>
+			fin >> n;<br>
+			if ( n == 0 )<br>	
+			<font color="#7f7f7f"><i>prelucrare caz special 0;<br></i></font>
+				else<br></h6>
+
+				<h3>
+					while( n != 0 )<br>
+					{<br></h3>
+						
+						<h4>
+						uc = n % 10;<br>
+						<font color="#7f7f7f"><i>prelucrare uc;<br></i></font>
+						n = n / 10;<br>
+					</h4>
+
+
+					<h3>}<br></h3>
+			<h6>fout << <font color="#7f7f7f"><i>rezultat</i></font>;<br></h6>
+<br>
+<br>
+			<h2>Exemple algoritmi:<br>
+<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a) calcularea numărului de cifre:<br></h2>
+<br>
+			<h6>
+			nrcifre = 0;<br>
+			if ( n == 0 )  nrcifre = 1;<br>
+			while( n != 0 )<br>
+			{<br></h6>
+
+				<h3>
+				nrcifre++;<br>
+				n = n / 10;<br></h3>
+
+			<h6>}</h6><br>
+<br>
+			<h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b) determinarea primei cifre:<br></h2>
+<br>
+		<h6>
+			if ( n == 0 ) primacif = 0;<br>
+			while( n > 9 )<br></h6>
+
+			<h3>
+				n = n / 10;<br>
+			</h3>
+		<h6>
+			primacif = n;<br>
+		</h6>
+<br>
+			<h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c) determinarea oglinditului unui număr:<br></h2>
+<br>
+		<h6>
+			ogl = 0;<br>
+			while ( n > 0 )<br>
+			{<br>
+
+			<h3>
+				cif = n % 10;<br>
+				ogl = ogl * 10 + cif;<br>
+				n = n / 10;<br>
+			</h3>
+
+		<h6>}<br>
+		</h6>
+<br>
+			<h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d) numărul aparițiilor cifrei K:<br></h2>
+<br>
+		<h6>
+			nrap = 0;<br>
+			if( n == 0 && K == 0) nrap=1;<br>
+			while ( n > 0 )<br>
+			{<br></h6>
+
+			<h3>
+				cif = n % 10;<br>
+				if ( cif == K )  nrap++;<br>
+				n = n / 10;<br>
+			</h3>
+
+		<h6>}<br>
+		</h6>
+
+
+		<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se citesc perechi de numere naturale până la citirea a două valori nule. Să se determine câte dintre perechi încep cu aceeași cifră.<br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+
+		<h6>
+		#include < bits/stdc++.h ><br>
+
+<br>
+		using namespace std;<br>
+<br>
+		int x, y, ucx, ucy, k;<br>
+		int main()<br>
+		{</h6>
+<br>
+			<h3>
+   			cin >> x >> y;<br>
+    		while ( x != 0 && y != 0)<br>
+    		{</h3>
+
+    			<h4>
+        		while ( x != 0 )<br>
+        		{</h4>
+
+        			<h5>
+            		ucx = x % 10;<br>
+            		x = x / 10;<br>
+ 		           	</h5>
+
+        		<h4>
+        		}
+<br>
+        		while ( y != 0 )<br>
+        		{
+        		</h4>
+
+        			<h5>
+            		ucy = y % 10;<br>
+            		y = y / 10;<br>
+            		</h5>
+
+            	<h4>
+        		}<br>
+<br>
+        		if ( ucx == ucy )<br>
+        		</h4>
+
+        			<h5>
+            		k++;<br>
+            		</h5>
+
+            	<h4>
+        		cin >> x >> y;<br>
+        		</h4>
+
+        	<h3>
+    		}<br>
+    		</h3>
+
+    	<h6>
+    	cout << k;<br>
+    	return 0;<br>
+		}  </h6>
+
+</body>
+</html>

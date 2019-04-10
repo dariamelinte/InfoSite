@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+
+	</head>
+
+
+	<h1> Verificarea unui număr oarecare de a fi prim</h1>
+<br>
+		
+		<h2>Presupunem că un număr este prim ( <font color="red">OK = 1</font> ). Dacă găsim un divizor înseamnă că am presupus greșit ( <font color="red">OK = 0</font> ) și ne oprim din căutarea din căutarea altor divizori.</h2>
+<br>
+<br>
+	
+		<h6>
+    	cin >> n; <br>
+     	if ( n == 0 && n == 1 )</h6>
+     	    
+     	    <h3>cout << "Nu";</h3>
+
+     	<h6>
+      	else if ( n == 2 )</h6>
+
+      	 	<h3>cout << "Da";</h3>
+
+      	<h6>
+    	else if ( n % 2 == 0 )</h6>
+      	   
+      	    <h3>cout << "Nu";</h3>
+
+      	<h6>
+       	else<br>
+        {</h6>
+            
+            <h3>ok = 1;<br>
+       	    for( d = 3; d * d <= n; d = d + 2; )</h3>
+
+       	    	<h4>
+                if( n % d == 0)<br>
+                {</h4>
+
+                	<h5>
+                    ok = 0;<br>
+                    break;</h5>
+
+                <h4>
+                }<br>
+                if( prim != 0)</h4>
+
+                	<h5>
+         	       cout << "Da";</h5>
+
+         	    <h4>
+         	    else</h4>
+
+         	    	<h5>
+        	       cout<< "Nu";</h5>
+       	<h6>}</h6>
+
+
+       	
+       	
+      <h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se citesc perechi de numere naturale până la citirea a două valori nule. Să se determine câte dintre perechi încep cu aceeași cifră.<br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+		
+		<h6>
+		#include < bits/stdc++.h ><br>
+<br>
+		using namespace std;<br>		
+		ifstream fin ("date.in");<br>
+		ofstream fout ("date.out");<br>
+<br>
+		long long n, d, S;<br>
+		int main()<br>
+		{</h6>
+
+		<h3>
+		    fin >> n;<br>
+		    S = 1 + n;<br>
+		    for ( d = 2; d * d <= n; d++)</h3>
+
+		    	<h4>
+		        if ( n % d == 0 )</h4>
+
+		        	<h5>
+		            S = S + d + n / d;</h5>
+
+		    <h3>
+		    if ( sqrt ( n ) == ( int ) sqrt ( n ) )</h3>
+
+		    	<h4>
+		        S = S - sqrt ( n );</h4>
+
+		    <h3>
+		    fout << S;<br>
+		    return 0;</h3>
+
+
+		<h6>}</h6>
+
+
+
+
+
+
+
+	<body>
+
+	</body>
+</html>

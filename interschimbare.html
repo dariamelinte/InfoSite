@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+
+	<h1> Algoritmul de interschimbare</h1>
+<br>
+		
+		<h2>I. Folosim o variabilă auxiliară:<br></h2>
+<br>
+			<h6>aux=x;<br>
+			x=y;<br>
+			y=aux;<br></h6>
+<br>
+		<h2>II. Folosim adunarea și scăderea:<br></h2>
+<br><h6>
+			x=x+y;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y=x+y;		<br>
+			y=x-y;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sau&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x=y-x;		<br>
+			x=x-y;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y=y-x;		<br>
+<br>
+<br></h6>
+<h2>
+		Problemă:<br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se dau 3 numere oarecare. Să se afișeze cele 3 numere în ordine crescătoare.<br>
+<br>
+		Rezolvare:<br>
+<br></h2>
+			
+<h6>
+			#include < bits/stdc++.h ><br>
+<br>
+			using namespace std;<br>
+			ifstream fin ("date.in");<br>
+			ofstream fout ("date.out");<br>
+<br>
+			int a,b,c,aux;<br>
+			int main()<br>
+			{<br></h6>
+
+				<h3>
+    			fin>>a>>b>>c;<br>
+    			if(a>b)<br>
+    			{<br></h3>
+        			
+<h4>
+        			aux=b;<br>
+        			b=a;<br>
+        			a=aux;<br></h4>
+
+    			<h3>}<br>
+    			if(b>c)<br>
+    			{<br></h3>
+
+    				<h4>
+        			aux=b;<br>
+        			b=c;<br>
+        			c=aux;<br></h4>
+
+        		<h3>
+    			}<br>
+    			if(a>b)<br>
+    			{<br></h3>
+
+    				<h4>
+        			aux=b;<br>
+        			b=a;<br>
+        			a=aux;<br></h4>
+
+        		<h3>
+    			}<br>
+    			fout<< a <<' '<< b <<' '<< c;<br>
+    			return 0;<br></h3>
+
+    		<h6>
+			}	</h6>	<br>
+
+
+</body>
+</html>

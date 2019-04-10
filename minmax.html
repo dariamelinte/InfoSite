@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<meta charset="UTF-8">
+	</head>
+
+<body>
+
+		<h1>Determinarea minimului / maximului a n numere</h1><br>
+<br>
+		<h2>Pentru a afla valoarea maximă din 3 sau mai multe valori, se inițializează maximul <i>"max"</i> cu prima valoare din șir sau cu o valoare cât mai mică și se compară restul valorilor cu maximul. Dacă găsesc o valoare mai mare ca maximul, acesta ia valoarea respectivă. Analog este aflat și valoarea minimă.</h2> <br>
+<br>
+<br>
+		<h6>
+		fin>>n;<br>
+		fin>>a;<br>
+		max=a; 
+				<font color="#7f7f7f">//presupunem ca maximul este primul element</font><br>
+		for (i=2; i<=n; i++)<br>
+		{</h6>
+
+			<h3>
+			fin>>a;<br>
+			if (max > a)</h3> 
+
+				<h4>max=a; 
+					<font color="#7f7f7f">//pentru minimul a n numere, in loc de (max > a) va fi (min < b)</font></h4>
+
+		<h6>}</h6> <br>
+
+<br>
+<br>
+		<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se dau n numere naturale. Calculaţi suma dintre cel mai mare și cel mai mic număr dat.<br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+			<h6>
+			#include < bits/stdc++.h ><br>
+<br>
+			using namespace std;<br>
+			ifstream fin ("date.in");<br>
+			ofstream fout ("date.out");<br>
+<br>
+			int i,n,a,mini,maxi,s;<br>
+			int main()<br>
+			{</h6>
+   				
+				<h3>
+   				fin>>n;<br>
+    			mini=999999;<br>
+    			maxi=-999999;<br>
+    			for(i=1; i<=n; i++)<br>
+    			{</h3>
+
+    				<h4>
+       				fin>>a;<br>
+        			if(a > maxi)</h4>
+
+        				<h5>
+            			maxi = a;</h5>
+
+            		<h4>
+        			if(a < mini)</h4>
+
+        				<h5>
+            			mini = a;</h5>
+
+            	<h3>
+   				}<br>
+   				fout << maxi + mini;<br>
+<br>
+   				 return 0;</h3>
+
+   			<h6>}</h6>
+
+</body>
+
+
+
+</html>

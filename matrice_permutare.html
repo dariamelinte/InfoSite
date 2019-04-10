@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Permutarea coloanelor la stânga</h1>
+<br>
+	<h2> Prima coloană se copiază într-un vector, se copiază coloana n pe coloana n-1, apoi vectorul se copiază pe ultima coloană. </h2>
+<br>
+		
+		<h6>for(i=1; i<=n; i++)</h6>
+			<h3>v[i]=a[i][1];</h3>
+<br>
+		<h6>for(i=1; i<=n; i++)</h6>
+			<h3>for(j=1; j<=m; j++)</h3>
+				<h4>a[i][j]=a[i][j+1];</h4>
+<br>
+		<h6>for(i=1; i<=n; i++)</h6>
+			<h3>a[i][n]=v[i];  
+				<font color="#7f7f7f"><i>// am luat din vector și am copiat în vector elementele pe ultima coloană</i></font></h3>
+<br>
+<br>
+	<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Să se ordoneze liniile unei matrici în funcție de suma elementelor pe linii. <br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+			<h6>
+			#include < bits/stdc++.h ><br>
+<br>
+			using namespace std;<br>
+			ifstream fin ("date.in");<br>
+			ofstream fout ("date.out");<br>
+<br>
+			int i,n,a,mini,maxi,s;<br>
+			int main()<br>
+			{</h6>
+   				<h3>fin>>n>>m;<br>
+   				for(i=1; i<=n; i++)</h3>
+   					<h4>for(j=1; j<=m; j++)</h4>
+   						<h5>fin>>a[i][j];</h5>
+<br>
+   				<h3>for(i=1; i<=n; i++)<br>
+   				{</h3>
+   					<h4>s=0;<br>
+   					for(j=1; j<=m; j++)</h4>
+   						<h5>s=s+a[i][j];</h5>
+   					<h4>v[i]=s;</h4>
+   				<h3>}<br>
+<br>
+   				for(i=1; i<=n; i++)</h3>
+   					<h4>for(j=1; j<=m; j++)</h4>
+   						<h5>if(v[i]>v[j])<br>
+   						{<br>
+   							&nbsp;&nbsp;swap(v[i],v[j]);<br>
+   							&nbsp;&nbsp;for(k=1; k<=n; k++)<br>
+   								&nbsp;&nbsp;&nbsp;&nbsp;swap(a[i][k], a[j][k]);<br>
+   						}</h5>
+
+   				<h3>return 0;</h3>
+   			<h6>}</h6>
+	</body>
+</html>

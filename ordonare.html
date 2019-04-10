@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Ordonarea unui vector </h1>
+<br>
+	
+			<h2> I. Bubble - Sort ( folosește perechile alăturate )</h2>
+<br>
+			<h6>
+			do{	ok=1;</h6>
+
+				<h3>
+				for( i = 0; i < n - 1; i++)</h3>
+
+					<h4>
+					if( v[ i ] > v[ i + 1 ] )<br>
+					{</h4>
+
+						<h5>
+						ok = 0;<br>
+						swap( v[ i ], v[ i + 1 ])</h5>
+					
+					<h4>}</h4>
+			<h6>} while( ok == 0 );</h6>
+<br>
+<br>
+			<h2> II. Selecția directă ( folosește toate perechile posibile )</h2>
+<br>
+			<h6>
+			for( i = 0; i < n - 1; i++ )</h6>
+
+				<h3>
+				for( j = i + 1; j < n; j++ )</h3>
+
+					<h4>
+					if( v[ i ] > v[ j ] )</h4>
+
+						<h5>
+						swap( v[ i ], v[ j ] );</h5>
+<br>
+
+		<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se dă un vector cu n elemente numere întregi, n fiind număr par. Să se ordoneze crescător elementele din prima jumătate a vectorului și descrescător elementele din a doua jumătate.<br>
+<br>
+		Rezolvare:<br></h2>
+<br>		
+		<h6>
+		#include < bits/stdc++.h ><br>
+		<br>
+		using namespace std;<br>
+		ifstream fin ( "halfsort.in" );<br>
+		ofstream fout ( "halfsort.out" );<br>
+<br>
+		int n,i,j,v[101];<br>
+		int main()<br>
+		{</h6>
+
+			<h3>
+    		fin >> n;<br>
+<br>
+    		for( i = 1; i <= n; i++)</h3>
+        		
+        		<h4>fin >> v[ i ];</h4>
+
+
+        	<h3>
+    		for( i = 1; i <= n / 2 - 1; i++)</h3>
+
+    			<h4>
+        		for( j = i + 1; j <= n / 2; j++)</h4>
+
+        			<h5>
+            		if( v[ i ] > v[ j ] )<br>
+                		&nbsp;&nbsp;swap( v[ i ], v[ j ] );</h5>
+<br>
+
+			<h3>
+    		for( i = n / 2 + 1; i <= n; i++)</h3>
+
+    			<h4>
+        		for( j = i + 1; j <= n; j++)</h4>
+
+        			<h5>
+            		if( v[ i ] < v[ j ] )<br>
+                		&nbsp;&nbsp;swap( v[ i ], v[ j ] );</h5>
+<br>
+			<h3>
+    		for( i = 1; i <= n; i++)</h3>
+
+    			<h4>
+        		fout << v[ i ] << ' ';</h4>
+<br>
+    		<h3>return 0;</h3>
+<br>
+    	<h6>}</h6>
+
+
+
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+	<h1> Cel mai mare divizor comun și cel mai mic multiplu comun</h1>
+<br>
+
+		<h2>I. Prin împărțire succesivă</h2>
+<br>
+			
+			<h6>
+			ca = a; cb = b;<br>
+			while( b != 0 )<br>
+			{</h6>
+
+				<h3>
+				r = a % b;<br>
+				a = b;<br>
+				b = r;<br>
+				</h3>
+
+			<h6>}
+			cout << a;
+
+				<font color="#7f7f7f"><i>// a este cel mai mare divizor comun</i></font><br>
+
+<br>
+			MC = ca * cb / a;  <font color="#7f7f7f"><i> // MC este cel mai mic multiplu comun</i></font>
+
+			</h6>
+<br>
+
+		<h2>II. Prin scădere succesivă</h2>
+<br>
+			<h6>
+			while ( a != b )</h6>
+
+				<h3>if ( a > b )</h3>
+
+					<h4>a = a - b;</h4>
+				<h3>else</h3>
+
+					<h4>b = b - a;</h4>
+
+<br>
+	
+		<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se citesc două fracții. Să se afișeze suma lor.<br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+		
+		<h6>
+		#include < bits/stdc++.h ><br>
+<br>
+		using namespace std;<br>
+		ifstream fin ("date.in");<br>
+		ofstream fout ("date.out");<br>
+<br>
+		int a,b,ca,cb,r;<br>
+		int main()<br>
+		{</h6>
+
+			<h3>
+			fin >> a >> b;<br>
+			ca = a; cb = b;<br>
+			while ( b != 0 )<br>
+			{</h3>
+
+				<h4>
+				r = a % b;<br>
+				a = b;<br>
+				b = r;</h4>
+
+			<h3>}<br>
+			fout << ca/a << "/" << cb/a;<br>
+			return 0;</h3>
+		<h6>}</h6>
+
+
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Interclasarea a doi vectori</h1>
+<br>
+		
+		<h2> Prin interclasarea a doi vectori se formează un element cu elemente comune din cei doi vectori deja ordonați </h2>
+<br>
+<br>
+		<h6>
+		A={1,3,4,7}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n=4<br>
+		B={2,3,6,8,9,10}&nbsp;&nbsp;&nbsp;m=6<br>
+<br>	
+		C={1,2,3,3,4,6,7,8,9,10}<br>
+<br>
+		i=1; j=1; k=0;<br>
+<br>
+		while(i<=n && j<=m)</h6>
+			<h3>if(A[i] < B[j])</h3>
+				<h4>C[++k]=A[i++];</h4>
+			<h3>else</h3>
+				<h4>C[++k]=B[j++];</h4>
+<br>
+		<h6>while(i<=n)&nbsp;&nbsp;&nbsp;&nbsp; <font color="#7f7f7f"><i>//dacă mai sunt elemente în vectorul A</i></font></h6>
+			<h3>C[++k]=A[i++];</h3>
+<br>
+		<h6>while(i<=m)&nbsp;&nbsp;&nbsp;&nbsp; <font color="#7f7f7f"><i>//dacă mai sunt elemente în vectorul B</i></font></h6>
+			<h4>C[++k]=B[j++];</h4>
+<br>
+		<h6>for(i=1; i<=n+m; i++)</h6>
+			<h3>cout << C[i] << ' ';</h3>
+<br>
+<br>
+		<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se dau două şiruri a şi b, cu n, respectiv m elemente, numere naturale, ordonate strict crescător. Să se afişeze, în ordine strict crescătoare, valorile existente în ambele şiruri.<br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+		<h6>
+		#include < bits/stdc++.h ><br>
+		using namespace std;<br>
+		ifstream fin ("interclasare2.in");<br>
+		ofstream fout ("interclasare2.out");<br>
+<br>
+		int n,a[100001],b[100001],c[200002],i,j,k,m;<br>
+		int main()<br>
+		{</h6>
+			<h3>
+		    fin>>n;<br>
+		    for(i=1; i<=n; i++)</h3>
+		       <h4>fin>>a[i];</h4>
+		    <h3>fin>>m;<br>
+		    for(j=1; j<=m; j++)</h3>
+		        <h4>fin>>b[j];</h4>
+		    <h3>i=1; j=1; k=0;<br>
+<br>
+ 		    while(i<=n && j<=m)<br>
+<br>
+ 		    if(a[i]==b[j])<br>
+            {  c[++k]=a[i++];</h3>
+               <h4>j++;}</h4>
+       		<h3>else if(a[i] < b[j])</h3>
+    		    <h4>i++;</h4>
+       		<h3>else if(a[i]>b[j])</h3>
+ 		        <h4>j++;</h4>
+<br>
+ 		    <h3>for(i=1; i<=k; i++)</h3>
+	 		    <h4>{    fout << c[i] << ' ';</h4>
+ 		     		<h5>if(i%10==0)<br>
+            		fout<<'\n';}</h5>
+<br>
+   	    	<h3>return 0;</h3>
+		<h6>}</h6>
+
+	</body>
+</html>

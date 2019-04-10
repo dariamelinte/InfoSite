@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Determinarea minimului / maximului într-un vector </h1>
+<br>
+<br>
+		<h2>Pentru a afla valoarea maximă dinntr-un vector, se inițializează maximul <i>"max"</i> cu o valoare cât mai mică și se compară restul valorilor cu maximul. Dacă găsesc o valoare mai mare ca maximul, acesta ia valoarea respectivă. Analog este aflat și valoarea minimă.</h2> <br>
+<br>
+
+		<h6>
+		int maxim = -999999, minim = 999999;<br>
+<br>
+		for( i = 0; i < n; i++ )<br>
+		{</h6>
+
+			<h3>
+			if ( v[i] > maxim )</h3>
+
+				<h4>
+				maxim = v[i];</h4>
+
+			<h3>
+			if ( v[i] > minim )</h3>
+
+				<h4>
+				minim =  v[i];</h4>
+		<h6>}</h6>
+
+<br>
+<br>
+		<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Să se ordoneze un vector doar pentru elementele aflate între minimul și maximul valorilor din vectorul respectiv.<br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+	
+			<h6>#include < bits/stdc++.h ><br>
+<br>
+			using namespace std;<br>
+			ifstream fin ("date.in");<br>
+			ofstream fout ("date.out");<br>
+<br>
+			int v[101],n,i,j,maxim,minim,pozitie_max,pozitie_min;<br>
+			int main()<br>
+			{</h6>
+
+				<h3>
+				fin >> n;<br>
+				for(i=1; i<=n; i++)</h3>
+					<h4>fin>>v[i];</h4>
+				<h3>
+				for(i=1; i<=n; i++)<br>
+				{</h3>
+					<h4>
+					if(v[i]>maxim)<br>
+					{	maxim=v[i];</h4>
+						<h5>pozitie_max=i;}</h5>
+					<h4>
+					if(v[i]< minim)<br>
+					{	minim=v[i];</h4>
+						<h5>pozitie_min=i;}</h5>
+				<h3>}<br>
+				if(pozitie_min>pozitie_max)</h3>
+					<h4>swap(pozitie_min,pozitie_max);</h4>
+<br>
+				<h3>for(i=pozitie_min; i< pozitie_max; i++)</h3>
+					<h4>for(j=i+1; j<=pozitie_max; j++)</h4>
+						<h5>if(v[i]>v[j])<br>
+							&nbsp;&nbsp;swap(v[i],v[j]);</h5>
+<br>
+				<h3>for(i=1; i<=n; i++)</h3>
+					<h4>fout<< v[i] <<' ';</h4>
+<br>
+				<h3>return 0;</h3>
+			<h6>}</h6>
+
+	</body>
+
+
+</html>

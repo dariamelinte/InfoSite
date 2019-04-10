@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Căutarea unui număr într-un vector </h1>
+<br>
+	<h2>I.  Căutarea secvențială<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;Aceasta presupune căutarea unui număr element cu element.</h2>
+<br>
+			<h6>găsit=0; 
+				<font color="#7f7f7f"><i>// presupunem că numărul nu se află în vector</i></font> <br>
+<br>
+			cin>>x>>n;<br>
+			for(i=0; i<=n-1; i++)</h6>
+				<h3>cin>>v[i];</h3>
+			<h6>for(i=0; i<=n-1; i++)</h6>
+				<h3>if(v[i] == x)</h3>
+					<h4>găsit=1;</h4>
+<br>
+			<h6>if(găsit==1)</h6>
+				<h3>cout << x << "se află în vector";</h3>
+			<h6>else</h6>
+				<h3>cout << x << "nu se află în vector";</h3>
+<br>
+	<h2>II.  Căutarea binară
+		&nbsp;&nbsp;&nbsp;&nbsp;Aceasta presupune căutarea unui număr într-un vector deja ordonat.</h2>
+<br>
+			<h6>cin>>x>>n;<br>
+			for(i=0; i<=n-1; i++)</h6>
+				<h3>cin>>v[i];</h3>
+			<h6>stânga=1; dreapta=n;
+				<font color="#7f7f7f"><i>//poziții în vector</i></font><br>
+			găsit=0;<br>
+			while(găsit==0 && stânga<=dreapta)
+			{</h6>
+				<h3>mijloc=(stânga+dreapta)/2;<br>
+				if(v[mijloc] == x)</h3>
+					<h4>găsit=1;</h4>
+				<h3>else if(x < v[mijloc])</h3>
+					<h4>dreapta=mijloc-1;</h4>
+				<h3>else stânga=mijloc+1;</h3>		
+			<h6>}<br>
+			if(găsit==1)</h6>
+				<h3>cout << x << "se află în vector";</h3>
+			<h6>else</h6>
+				<h3>cout << x << "nu se află în vector";</h3>
+<br>
+<br>
+		<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se dă un vector x cu n elemente numere naturale, ordonate crescător, și un vector y cu m elemente, de asemenea numere naturale. Verificați pentru fiecare element al vectorului y dacă apare în x. Programul va afișa pe ecran m valori 0 sau 1, separate prin exact un spațiu. A j-a valoare afișată este 1, dacă al j-lea element al șirului y apare în x, respectiv  0 în caz contrar.<br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+	<h6>
+	#include < bits/stdc++.h ><br>
+	using namespace std;<br>
+	ifstream fin ("date.in");<br>
+	ofstream fout ("date.out");<br>
+<br>
+	int n,m,x[100001],y[100001],i,j,k,mijl;<br>
+	int main()<br>
+	{</h6>
+		<h3>
+		fin>>n;<br>
+		for(i=1; i<=n; i++)</h3>
+			<h4>fin>>x[i];</h4>
+		<h3>
+		fin>>m;<br>
+		for(i=1; i<=m; i++)</h3>
+			<h4>fin>>y[i];</h4>
+		<h3>
+		for(k=1; k<=m; k++)<br>
+		{</h3>
+			<h4>i=1;j=n;<br>
+			while(i<=j)<br>
+			{</h4>
+				<h5>mijl=(i+j)/2;<br>
+				if(x[mijl]==y[k])<br>
+				{<br>
+					&nbsp;&nbsp;fout << 1 << " ";<br>
+					&nbsp;&nbsp;break;<br>
+				}<br>
+				else if(x[mijl] < y[k])	<br>
+					&nbsp;&nbsp;i=mijl+1;<br>
+				else<br>
+					&nbsp;&nbsp;j=mijl-1;</h5>
+			<h4>}<br>
+			if(i>j)</h4>
+				<h5>fout << 0 << " ";</h5>
+		<h3>}<br>
+		return 0;</h3>
+	<h6>}</h6>
+
+
+	</body>
+</html>

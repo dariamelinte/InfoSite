@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Aplicații </h1>
+
+<br>
+<br>
+
+		<h2><u>Problema 18:</u> <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Se citește din fișierul text <i>linie.in</i> un tablou bidimensional <b>a</b> cu  <b>nxn</b>(n < 50) elemente numere naturale de cel mult 9 cifre. Să se realizeze un program care afișează  în fișieru text <i>linie.out</i>:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Linia cu celel mai multe numere prime.<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pe a doua linie se vor afișa elementele diagonalei principale ale tabloului.  <br>
+<br>
+		Exemplu:</h2><br>
+
+			<h6><i><font color="#781e4e"> linie.in:</font> </i><br>3<br>2 3 5<br>4 6 2<br>7 9 3<br> 
+				<i> <font color="#781e4e"> linie.out:</font></i><br>1<br>2 6 3</h6>
+<br>
+<br>
+        <h2> Rezolvare: </h2><br>
+<br>
+        <h6>#include < bits/stdc++.h ><br>
+<br>
+        using namespace std;<br>
+        ifstream fin ("linie.in");<br>
+        ofstream fout ("linie.out");<br>
+<br>
+        int a[101][101],n,i,j,nr,pozitie,s,v[101],d,ok,maxi;<br>
+        int main()<br>
+        {</h6>
+            <h3>fin>>n;<br>
+            for(i=1; i<=n; i++)</h3>
+                <h4>for(j=1; j<=n; j++)</h4>
+                    <h5>fin>>a[i][j];</h5>
+<br>
+<h3>for(i=1; i<=n; i++)<br>
+    {</h3>
+        <h4>nr=0;<br>
+        for(j=1; j<=n; j++)<br>
+        {</h4>
+            <h5>ok=0;<br>
+            for(d=2; d*d<=a[i][j]; d++)<br>
+                &nbsp;&nbsp;&nbsp;if(a[i][j]%d==0)<br>
+            {<br>
+                &nbsp;&nbsp;&nbsp;ok=1;<br>
+                &nbsp;&nbsp;&nbsp;break;<br>
+            }<br>
+            if(ok==0)<br>
+                &nbsp;&nbsp;&nbsp;nr++;<br>
+            pozitie++;<br>
+            if(pozitie==n)<br>
+            {<br>
+                &nbsp;&nbsp;&nbsp;pozitie=1;<br>
+                &nbsp;&nbsp;&nbsp;v[i]=nr;<br>
+            }</h5>
+        <h4>}</h4>
+    <h3>}<br>
+<br>
+        maxi=-999999;<br>
+        for(i=1; i<=n; i++)</h3>
+            <h4>if(v[i]>maxi)<br>
+            {</h4>
+                <h5>maxi=v[i];<br>
+                pozitie=i;</h5>
+            <h4>}</h4>
+        <h3>fout << pozitie << endl;<br>
+<br>
+        for(i=1; i<=n; i++)</h3>
+            <h4>fout << a[i][i] << ' ';</h4>
+<br>
+            <h3>return 0;</h3>
+        <h6>}</h6>
+
+    </body>
+</html>
+

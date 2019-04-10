@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Citirea unei matrice și afișarea sa </h1>
+<br>
+	
+	<h2>  O matrice este folosită pentru a memora mai multe valori în același timp pe diferite rânduri și coloane. <br>
+			Fiecare element se accesează după poziția pe care o au în matrice.<br>
+<br>
+
+		<u> Citirea unei matrice </u></h2>
+<br>
+		
+		<h6>cin >> n >> m;<br>
+		for( i = 1; i <= n; i++ )</h6>
+			<h3>for( j = 1; j <= m; j++ )</h3>
+				<h4>cin >> a[ i ][ j ];</h4>
+<br>
+<br>
+		<h2><u> Afișarea unei matrice </u><br>
+<br>
+
+		I. În linie </h2>
+<br>
+		
+		<h6>for(i=1; i<=n; i++)</h6>
+			<h3>for(j=1; j<=m; j++)</h3>
+				<h4>cout << a[i][j];</h4>
+<br>
+		<h2> II. Fiecare linie în parte cu toate elementele de pe coloană </h2>
+	<br>
+
+		<h6>for(i=1; i<=n; i++)<br>
+		{</h6>	
+			<h3>for(j=1; j<=m; j++)</h3>
+				<h4>cout << a[i][j];<br>
+				cout << endl;</h4>
+ 		<h6>}</h6>
+<br>
+<br>
+	<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gigel a găsit o matrice cu n linii și m coloane și elemente numere naturale. El își propune să determine, pentru fiecare linie, cea mai mică valoare care se poate obține adunând elementele de pe linie, cu excepția unuia.   <br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+
+		<h6>#include < bits/stdc++.h ><br>
+<br>
+		using namespace std;<br>
+		ifstream fin ("date.in");<br>
+		ofstream fout ("date.out");<br>
+<br>
+		int a[101][101],m,n,i,j,s,maxi;<br>
+		int main()<br>
+		{</h6>
+    		<h3>cin>>n>>m;<br>
+ 		    for(i=1; i<=n; i++)</h3>
+        		<h4>for(j=1; j<=m; j++)</h4>
+        			<h5>cin>>a[i][j];</h5>
+<br>
+    		<h3>for(i=1; i<=n; i++)<br>
+		        {</h3>
+		            <h4>s=0; maxi=-999999;<br>
+		            for(j=1; j<=m; j++)<br>
+		            {</h4>
+		            	<h5>s=s+a[i][j];<br>
+    		        	if(a[i][j]>maxi)<br>
+    		            	&nbsp;&nbsp;maxi=a[i][j];</h5>
+					<h4>}<br>
+    		        s=s-maxi;<br>
+    		        cout << s << ' ' ;</h4>
+    		    <h3>}<br>
+    		return 0;</h3>
+		<h6>}</h6>
+
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+	<h1> Determinarea divizorilor proprii ai unui număr natural </h1>
+<br>
+	
+		<h2>
+		Un număr natural are divizori:
+		<ul>
+			<li> improrii: 1 și el însuși;</li>
+			<li> proprii: de la 2 la n / 2;</li>
+		</ul>
+
+		Pentru a determina divizorii proprii ai unui număr se iau toate numerele din intervalul [ 2; n/2 ] și se verifică dacă este divizorul acestuia.<br>
+<br>
+		<u> Afișarea divizorilor </u></h2>
+<br>
+		
+		<h6>
+		cin >> n;<br>
+		cout << 1 << ' ';<br>
+		for ( d = 2; d <= n / 2; d++)</h6>
+
+			<h3>
+			if( n % d == 0 )</h3>
+
+				<h4>
+				cout << d;</h4>
+
+		<h6>
+		cout << n;</h6>
+<br>
+
+		<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Să se afișeze  câți divizori proprii are un număr natural n și afișați suma acestora.<br>
+<br>
+		Rezolvare:<br></h2>
+<br>
+		
+		<h6>
+		#include < bits/stdc++.h ><br>
+<br>
+		using namespace std;<br>		
+		ifstream fin ("date.in");<br>
+		ofstream fout ("date.out");<br>
+<br>
+		int n, d, k, s;<br>
+		int main()<br>
+		{</h6>
+
+			<h3>
+			fin >> n;<br>
+			for( d = 2; d <= n / 2; d++)</h3>
+				
+				<h4>
+				if( n % d == 0 )<br>
+				{</h4>
+
+					<h5>
+					s = s + d;<br>
+					k++;</h5>
+				
+				<h4>}</h4>
+
+			<h3>
+			fout << k << ' ' << s;<br>
+			return 0;</h3>
+		
+		<h6>}</h6>
+
+	</body>
+</html>

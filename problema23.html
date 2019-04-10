@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Aplicații </h1>
+
+<br>
+<br>
+
+		<h2><u>Problema 23:</u> <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Se citesc din fişierul <i>matrice.in</i> n și m ce reprezinta liniile și coloanele unei matrici apoi elementele matricei numere întregi. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Să se afișeze pe prima linie a fișierului <i>matrice.out</i> valoarea maximă din matrice; <br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Să se adauge o linie la sfârşitul matricei, fiecare element de pe aceasta linie fiind egal cu suma elementelor de pe coloana pe care se află. Matricea astfel rezultată să se afișeze în fișierul <i>matrice.out</i>. <br>
+<br>
+		Exemplu:</h2><br>
+
+			<h6><i><font color="#781e4e"> matrice.in:</font> </i><br>4 5<br>1 2 3 4 3<br>4 5 6 5 3<br>7 8 9 6 9<br>3 1 8 5 1 <br> 
+				<i><font color="#781e4e"> matrice.out:</font></i><br>valoarea maximă in matrice = 9<br>1 2 3 4 3<br>4 5 6 5 3<br>7 8 9 6 9<br>3 1 8 5 1<br>15 16 26 20 16</h6>
+<br>
+<br>
+        <h2> Reozolvare: </h2><br>
+<br>
+        <h6>#include < bits/stdc++.h ><br>
+<br>
+        using namespace std;<br>
+        ifstream fin ("matrice.in");<br>
+        ofstream fout ("matrice.out");<br>
+<br>
+        int a[101][101],n,i,j,m,maxi,v[101],s;<br>
+        int main()<br>
+        {</h6>
+            <h3>fin>>n;<br>
+            for(i=1; i<=n; i++)</h3>
+                <h4>for(j=1; j<=n; j++)</h4>
+                    <h5>fin>>a[i][j];</h5>
+<br>
+<h3>for(i=1; i<=n; i++)</h3>
+        <h4>for(j=1; j<=m; j++)</h4>
+            <h5>if(a[i][j]>maxi)<br>
+                &nbsp;&nbsp;&nbsp;maxi=a[i][j];</h5>
+    <h3>fout << "valoarea maxima in matrice = "<< maxi << endl;<br>
+<br>
+    for(j=1; j<=m; j++)<br>
+    {</h3>
+        <h4>s=0;<br>
+        for(i=1; i<=n; i++)</h4>
+            <h5>s=s+a[i][j];</h5>
+        <h4>v[j]=s;</h4>
+    <h3>}<br>
+    n++;<br>
+    for(j=1; j<=m; j++)</h3>
+        <h4>a[n][j]=v[j];</h4>
+<br>
+    <h3>for(i=1; i<=n; i++)<br>
+    {</h3>
+        <h4>for(j=1; j<=m; j++)</h4>
+            <h5>fout << a[i][j] << ' ';</h5>
+        <h4>fout << endl;</h4>
+    <h3>}<br>
+<br>
+    return 0;</h3>
+<h6>}</h6>
+	</body>
+
+</html>

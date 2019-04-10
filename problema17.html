@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Aplicații </h1>
+
+<br>
+<br>
+
+		<h2><u>Problema 17:</u> <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Din fişierul text <i>tablou.in</i>  se citesc: un număr natural <b>n (n≤100)</b> reprezentând numărul de linii și numărul de coloane ale unui tablou bidimensional. De pe următoarele linii se citesc elementele tabloului, câte <b>n</b> componente de pe fiecare linie, numere naturale nenule cu cel mult trei cifre fiecare.  <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pe prima linie a fișierului <i>tablou.out</i>, afișați valoarea celui mai mic element din matrice.<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Determinați câte elemente situate sub diagonala secundară (exclusiv diagonala!) au suma cifrelor un număr par și afișați acest număr pe al doilea rând al fișierului <i>tablou.out</i>. Dacă nu există niciun număr cu proprietatea cerută, se va afișa în fișier mesajul <i>Nu există!</i> . <br>
+<br>
+		Exemplu:</h2><br>
+
+			<h6><i><font color="#781e4e"> tablou.in:</font> </i><br>4<br>1 2 1 3<br>43 454 234 12<br>23 77 99 1<br>8 6 5 3<br> 
+				<i> <font color="#781e4e"> tablou.out:</font></i><br>1<br>2</h6>
+<br>
+<br>
+        <h2> Reozolvare: </h2><br>
+<br>
+        <h6>#include < bits/stdc++.h ><br>
+<br>
+        using namespace std;<br>
+        ifstream fin ("tablou.in");<br>
+        ofstream fout ("tablou.out");<br>
+<br>
+        int a[101][101],n,i,j,mini,copie,s,nr;<br>
+        int main()<br>
+        {</h6>
+            <h3>fin>>n;<br>
+            for(i=1; i<=n; i++)</h3>
+                <h4>for(j=1; j<=n; j++)</h4>
+                    <h5>fin>>a[i][j];</h5>
+<br>
+            <h3>mini=999999;<br>
+            for(i=1; i<=n; i++)</h3>
+                <h4>for(j=1; j<=n; j++)</h4>
+                    <h5>if(a[i][j] < mini)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;mini=a[i][j];</h5>
+            <h3>fout << mini << endl;<br>
+            for(i=1; i<=n; i++)</h3>
+                <h4>for(j=1; j<=n; j++)</h4>
+                    <h5>if(i+j>n+1)</h5>
+            <h3>{</h3>
+                <h4>s=0;<br>
+                copie=a[i][j];<br>
+                while(copie!=0)<br>
+                {</h4>
+                    <h5>s=s+copie%10;<br>
+                    copie/=10;</h5>
+                <h4>}<br>
+                if(s%2==0)</h4>
+                    <h5>nr++;</h5>
+            <h3>}<br>
+<br>
+            if(nr==0)</h3>
+                <h4>fout<<"Nu exista!";</h4>
+            <h3>else</h3>
+                <h4>fout << nr;</h4>
+<br>
+            <h3>return 0;</h3>
+        <h6>}</h6>
+
+    </body>
+</html>
+
+
+
+
+
+		
+	</body>
+
+</html>

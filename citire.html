@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+
+		<h1> Citirea unui vector și afișarea sa </h1>
+<br>
+			
+		<h2> Vectorii sunt folosiți pentru a memora mai multe valori în același timp. <br>
+			 Fiecare element se accesează după poziția pe care o au în șir.<br>
+<br>
+
+		<u> Citirea unui vector </u></h2>
+<br>
+		<h6>
+		cin >> n;<br>
+		for ( i = 0; i < n; i++ )</h6>
+
+			<h3>
+			cin >> v[ i ];</h3>
+<br>
+<br>	
+		<h2>
+		<u> Afișarea unui vector </u><br>
+<br>
+		<li> pe linie</li></h2>
+<br>
+		<h6>
+		for( i = 0; i < n; i++ )</h6>
+
+			<h3>
+			cout << v[ i ] << ' ';</h3>
+<br>
+		<h2><li> de la ultimul la primul element </li></h2>
+<br>
+		
+		<h6>
+		for( i = n - 1; i >= 0; i-- )</h6>
+
+			<h3>
+			cout << v[ i ]<< ' ';</h3>
+
+<br>
+
+		<h2>Problemă: <br>
+<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Să se afișeze  elementele vectorului  de n elemente de pe pozițiile impare.<br>
+<br>
+		Rezolvare:<br></h2>
+<br>		
+		<h6>
+		#include < bits/stdc++.h ><br>
+<br>
+		using namespace std;<br>		
+		ifstream fin ("date.in");<br>
+		ofstream fout ("date.out");<br>
+<br>
+		int v[10], n, i;<br>
+		int main()<br>
+		{</h6>
+
+			<h3>
+			fin >> n;<br>
+			for( i = 0; i < n; i++)</h3>
+
+				<h4>
+				fin >> v[ i ];</h4>
+
+			<h3>
+			for( i = 0; i < n; i = i + 2 )</h3>
+
+				<h4>
+				fout << " Pe poziția " << i << " este elementul " << v[ i ] <<'\n';</h4>
+
+			<h3>
+			return 0</h3>
+
+		<h6>}</h6>	
+
+	</body>
+</html>
